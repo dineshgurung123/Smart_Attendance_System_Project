@@ -19,6 +19,17 @@ public class Main extends JFrame {
         JButton button1 = new JButton("Register");
         JButton button2 = new JButton("Attendance");
 
+
+
+        // Load the background image
+        ImageIcon backgroundIcon = new ImageIcon("image/smartAttendance.jpg");
+        JLabel background = new JLabel(backgroundIcon);
+        background.setSize(600, 600);
+        setContentPane(background);
+        background.setLayout(null);
+
+
+
         // Create a panel with FlowLayout for horizontal arrangement
         panel = new JPanel();
         panel.setLayout(new FlowLayout(FlowLayout.CENTER)); // Align to the right

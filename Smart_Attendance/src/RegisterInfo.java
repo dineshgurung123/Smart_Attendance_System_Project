@@ -2,6 +2,9 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import  java.sql.*;
+import java.util.Scanner;
+import java.util.Scanner.*;
 
 public class RegisterInfo {
 
@@ -87,12 +90,43 @@ public class RegisterInfo {
     }
 
     private void handleSubmit() {
-        String name = nameField.getText();
-        String id = idField.getText();
-        String address = addressField.getText();
-        String phoneno = phoneField.getText();
+        String Name = nameField.getText();
+        String Id = idField.getText();
+        String Address = addressField.getText();
+        String Phone_no = phoneField.getText();
 
         // Handle form submission logic here
+
+
+
+           try{
+
+               Connection con ;
+
+               // Load the driver
+               Class.forName("com.mysql.cj.jdbc.Driver");
+
+               // Connection to the database
+               String url = "jdbc:mysql://localhost:3306/smart_attendance";
+               String username = "root";
+               String password = "sspear54321";
+
+
+                con = DriverManager.getConnection(url, username, password)   ;
+
+            PreparedStatement ps = con.prepareStatement("insert into student(Name, Id, Address, Phone_no) values(?,?,?,?)");
+            ps.setString(1, Name);
+            ps.setString(2, Id);
+            ps.setString(3, Address);
+            ps.setString(4, Phone_no);
+            ps.executeUpdate();
+
+
+
+           }catch (Exception e){
+               System.out.println(e.getStackTrace());
+           }
+
     }
 
     private void handleClear() {
