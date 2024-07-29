@@ -41,7 +41,7 @@ public class Main extends JFrame {
 
         // Frame settings
         setTitle("Smart_Attendance");
-        setSize(600, 600);
+        setSize(600, 500);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // Ensure the application closes on exit
         setVisible(true);

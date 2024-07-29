@@ -54,7 +54,8 @@ public class Register {
                     }
                 }
             }
-        }, 5000); // Capture image after 5 seconds (5000 milliseconds)
+        }, 5000);// Capture image after 5 seconds (5000 milliseconds)
+        RegisterInfo registerInfo = new RegisterInfo();
     }
 
     public void startCamera() {
@@ -82,7 +83,8 @@ public class Register {
                     }
                 }
             }
-        }, 0, 30); // Initial delay of 0 milliseconds, repeat every 30 milliseconds
+        }, 0, 30);// Initial delay of 0 milliseconds, repeat every 30 milliseconds
+
     }
 
     public void initializeClassifier() {
